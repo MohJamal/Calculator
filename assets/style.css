@@ -51,7 +51,7 @@ height: 120px;
 height: 400px;
 }
 
-.operator, .number ,.sub-operator,.empty , .curOperator{
+.operator, .number , .subOperator ,.empty , .curOperator{
 width: 80px;
 height: 80px;
 float: left;
@@ -62,20 +62,20 @@ font-size: 15px;
 
 
 
-.number ,.sub-operator,.empty{
+.number ,.subOperator ,.empty{
 background-color: #eaedef;
 }
 
-.number , .operator , .sub-operator, .curOperator{
+.number , .operator , .subOperator , .curOperator{
 cursor: pointer;
 }
 
-.operator:active , .number:active, .sub-operator:active , .curOperator:active{
+.operator:active , .number:active, .subOperator:active , .curOperator:active{
 font-size: 13px;
 }
 
 
-.operator:focus , .number:focus ,.sub-operator:focus ,.empty:focus, .curOperator:active{
+.operator:focus , .number:focus ,.subOperator:focus ,.empty:focus, .curOperator:active{
 outline: 0;
 }
 
@@ -85,7 +85,7 @@ outline: 0;
     transition: 0.6s;
 } 
 
-.number:hover , .sub-operator:hover{
+.number:hover , .subOperator:hover{
     background-color: royalblue;
     transition: 0.6s;
 }

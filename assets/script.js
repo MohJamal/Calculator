@@ -38,6 +38,20 @@ function reverseNumberFormat(num) {
     return Number(num.replace(/,/g, '')); //Replace each (,) with '' => convert 9,999 to 9999
 }
 
+
+
+var number = document.getElementsByClassName("number");
+for (var i = 0; i < number.length; i++) {
+    number[i].addEventListener('click', function () {
+        var output = reverseNumberFormat(getOutput());
+        if (output != NaN) { // if output is a number
+            output = output + this.id;
+            printOutput(output);
+        }
+    })
+}
+
+
 /*The getElementsByClassName() method returns a collection of all elements 
 in the document with the specified class name, as an HTMLCollection object!*/
 var operator = document.getElementsByClassName("operator");
@@ -45,16 +59,7 @@ var operator = document.getElementsByClassName("operator");
 for (var i = 0; i < operator.length; i++) {
     operator[i].addEventListener('click', function () {
 
-        if (this.id == "clear") {
-            printHistory("");
-            printOutput("");
-        } else if (this.id == "backspace") {
-            var output = reverseNumberFormat(getOutput()).toString();
-            if (output) { // if output has a value
-                output = output.substr(0, output.length - 1);
-                printOutput(output);
-            }
-        } else {
+
             var output = getOutput();
             var history = getHistory();
 
@@ -81,7 +86,7 @@ for (var i = 0; i < operator.length; i++) {
 
 
             }
-        }
+        
 
 
 
@@ -89,18 +94,49 @@ for (var i = 0; i < operator.length; i++) {
 }
 
 
-var number = document.getElementsByClassName("number");
-for (var i = 0; i < number.length; i++) {
-    number[i].addEventListener('click', function () {
-        var output = reverseNumberFormat(getOutput());
-        if (output != NaN) { // if output is a number
-            output = output + this.id;
-            printOutput(output);
-        }
+var subOperator = document.getElementsByClassName("subOperator");
+
+for (var i = 0; i < subOperator.length; i++) {
+    subOperator[i].addEventListener('click', function () {
+
+
+
+        if (this.id == "clear") {
+            printHistory("");
+            printOutput("");
+        } else if (this.id == "backspace") {
+            var output = reverseNumberFormat(getOutput()).toString();
+            if (output) { // if output has a value
+                output = output.substr(0, output.length - 1);
+                printOutput(output);
+            }
+        } 
     })
 }
 
+var curOperator = document.getElementsByClassName("curOperator");
+
+for (var i = 0; i < curOperator.length; i++) {
+    curOperator[i].addEventListener('click', function () {
+        var output = getOutput();
+        var result;
+
+        if (this.id == "SD") {
+            result = output*0.29;
+            printOutput(result);
+         
+        }
+        else if(this.id == "DS"){
+            result = output*3.42;
+            printOutput(result);
+        }
+        else if(this.id == "SE"){
+            result = output*0.25;
+            printOutput(result);
+        }else{
+            result = output*4.02;
+            printOutput(result);
+        }
 
 
-
-
+    })}
