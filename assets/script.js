@@ -74,7 +74,7 @@ for (var i = 0; i < operator.length; i++) {
                 history = history + output;
 
                 if (this.id == "=") {
-                    var result = eval(history);
+                    var result = Math.round(eval(history));
                     printOutput(result);
                     printHistory("");
                 }
@@ -123,20 +123,20 @@ for (var i = 0; i < curOperator.length; i++) {
 
         if (this.id == "SD") {
             result = output*0.29;
-            printOutput(result);
+       
          
         }
         else if(this.id == "DS"){
             result = output*3.42;
-            printOutput(result);
+          
         }
         else if(this.id == "SE"){
             result = output*0.25;
-            printOutput(result);
+          
         }else{
             result = output*4.02;
-            printOutput(result);
+        
         }
-
-
+    result= Math.round(result);
+    printOutput(result);
     })}
