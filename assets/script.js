@@ -79,6 +79,7 @@ for (var i = 0; i < operator.length; i++) {
                     printOutput(result);
                     printHistory("");}
                     else{
+                        printOutput("Cannot divide by zero.");
                     alert("Cannot divide by zero.");
                     }
                 }
