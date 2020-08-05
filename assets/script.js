@@ -75,8 +75,12 @@ for (var i = 0; i < operator.length; i++) {
 
                 if (this.id == "=") {
                     var result = Math.round(eval(history));
+                    if(isFinite(result)){
                     printOutput(result);
-                    printHistory("");
+                    printHistory("");}
+                    else{
+                    alert("Cannot divide by zero.");
+                    }
                 }
                 else{
                    history = history+ this.id;
